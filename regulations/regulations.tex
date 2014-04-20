@@ -1,0 +1,319 @@
+\documentclass[a5paper,10pt,twoside]{book}
+
+\usepackage[pass]{geometry}
+\usepackage{blindtext}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage[utf8]{inputenc}
+
+
+% Make it A5.
+\pdfpageheight=210mm
+\pdfpagewidth=148mm
+\addtolength{\textheight}{.875in}
+
+% with this we ensure that the chapter and section
+% headings are in lowercase.
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}  % delete current header and footer
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % space for the rule
+\fancypagestyle{plain}{%
+   \fancyhead{} % get rid of headers on plain pages
+   \renewcommand{\headrulewidth}{0pt} % and the line
+}
+
+% Remove numbers on empty pages.
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{%
+  \clearpage
+  {\pagestyle{empty}\origdoublepage}%
+}
+\let\cleardoublepage\clearemptydoublepage
+
+\titleformat{\chapter}[display]{}{}{1ex}{\bfseries\LARGE}[]
+\titlespacing{\chapter}{0pt}{-100pt}{40pt}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\includegraphics[width=10cm]{boi2014}\\[2cm]
+{\bfseries\Huge Baltic Olympiad in Informatics}\\[1.5cm]
+{\Huge\it Competition Rules}\\
+\vfill
+{\bfseries\LARGE Palanga, 2014}
+\end{center}
+\end{titlepage}
+
+\chapter{Competition Rules}
+
+BOI 2014 is an individual competition between contestants from nine
+participating countries: Denmark, Estonia, Finland, Germany, Latvia, Lithuania,
+Norway, Poland and Sweden. Each country is allowed to send up to six
+contestants.
+
+\section{Competition Schedule}
+
+The competition days of BOI 2014 are Sunday, 27th of April, and Monday, 28th of
+April. On each competition day the contestants will have five hours to complete
+three tasks.
+
+There will be a Practice Competition held on Saturday, 26th of April, to
+familiarise the contestants with the contest environment, including workstations
+and the grading system. The solutions submitted during the Practice Competition
+will be evaluated, but the results will not be considered in the final ranking.
+
+\section{Environment and Supplies}
+
+For competition each contestant will have a desk with a workstation.
+
+The following software will be available on all workstations:
+
+\begin{enumerate}
+    \item Linux Distribution: Debian Wheezy 32-bit, LXDE.
+    \item Web browsers: Firefox.
+    \item Terminal emulators: lxterminal, xterm.
+    \item Editors: joe, vim, gvim, eclipse-cdt, emacs, lazarus, gedit, nano,
+    scite, codeblocks, geany, fp.
+    \item Compilers and interpreters: gcc/g++ 4.7.1, fpc 2.6.0, python
+    2.7.3/3.2.3 debuggers: gdb 7.4.1, ddd 3.3.12.
+    \item Documentation for Pascal, C, C++, STL.
+\end{enumerate}
+
+Blank, grid paper and pens will be available in the competition room.
+Contestants can bring pens, pencils and erasers with them.
+
+If a contestant wishes to bring a keyboard or mouse with wired USB connector or
+small mascots or English dictionaries to the competition, these must be
+submitted to the Technical Staff during the Practice Competition. Any of these
+will be checked and, if cleared, will be provided to the contestant during the
+contest. After the first competition day, the contestant must leave these items
+on his or her table if (s)he wants to use them during the second competition
+day. After the second competition day the contestant must take any of these
+items with him or her.
+
+\section{Tasks}
+
+The tasks posed at BOI 2014 are intended to be of algorithmic nature. That is,
+the focus is on designing correct and efficient algorithms.
+
+Each task will be divided into one or more subtasks, each worth a portion of the
+total points.
+
+\section{Solutions}
+
+Unless otherwise stated in the task description, the solution of a task is a
+program written in the Pascal or C++ language. Both C++03 and C++11 versions are
+supported. The program submitted by a contestant must be contained in a single
+source file.
+
+Solutions will have to fit within time and memory limits specified for every
+task separately. The memory limit is on the overall memory usage including
+executable code size, stack, heap, etc. Limits are applied to individual test
+runs.
+
+Unless otherwise stated in the task description, submissions are required to
+read data from standard input and write to standard output.
+
+\section{Starting the Competition}
+
+When contestants enter the competition room at the beginning of the competition,
+their workstations will be switched on. Competition tasks will be inside
+envelopes next to the workstations. The account details needed to access the
+grading system will be given to each contestant in the envelope with the tasks.
+Contestants are not allowed to open the envelopes or touch the workstations
+until the start signal is given.
+
+Each contestant’s task descriptions and technical information are presented in
+English and in his or her native language if such translation is prepared by his
+or her team leader. In case of any discrepancies, the English text is binding
+and official.
+
+\section{Assistance and Requests}
+
+During the competition communication is allowed only with room supervisors and
+the Scientific Committee.
+
+Contestants may submit questions, technical support requests and perform
+printing. A contestant may ask a room supervisor for assistance at any time. The
+supervisors will NOT answer questions about the competition tasks, but will
+deliver paper, printouts, attend to hardware problems, help to find toilets,
+etc.
+
+If a contestant encounters problems with hardware, (s)he can request help from
+the room supervisor. In case of hardware failure, extra time will be granted to
+a contestant but this will cover only the amount of time needed to replace the
+hardware.
+
+Questions must be submitted using a special form in the grading system in
+English or in the contestant's native language. In the latter case the
+Scientific Committee will give answer to the question only after the question is
+translated to English by the team leader. Contestants should phrase their
+questions so that a yes/no answer would be meaningful. Questions will be
+answered with one of the following:
+
+\begin{enumerate}
+    \item “YES”
+    \item “NO”
+    \item “ANSWERED IN TASK DESCRIPTION (EXPLICITLY OR IMPLICITLY)” — The task
+    description contains sufficient information. The contestant should read it
+    again carefully.
+    \item “INVALID QUESTION” — The question is most likely not phrased so that a
+    yes/no answer would be meaningful. The contestant is encouraged to rephrase
+    the question.
+    \item “NO COMMENT” — The contestant is asking for information that the
+    Scientific Committee cannot give.
+\end{enumerate}
+
+The Scientific Committee will answer every question submitted by contestants.
+This may take some time, so the contestant should continue working while waiting
+for the answer to a given question. The contestant shall not be involved in the
+discussion.
+
+In case of similar questions submitted by several contestants, the Scientific
+Committee may give an announcement via the grading system or by presenting it in
+competition rooms.
+
+\section{Delivering the Solutions}
+
+Contestants submit their solutions using the grading system and use it to view
+the status of their submissions. Each contestant can make at most one submission
+for each task per minute at most 100 submissions per task in total.
+
+When a solution is submitted, it will appear in the system, but there may be a
+few minutes delay before it is graded. Once it is graded, the contestant will be
+able to view summary results of a few sample tests. If these results are
+satisfactory, the contestant may release test the submission. This shows the
+results of the submission on the official tests for all subtasks. To release
+test a submission, it is necessary to forfeit a release token. Contestants will
+be given one release token per task every 20 minutes. At any time, at most three
+tokens can be saved up for each task.
+
+In the event of technical failure that leads to some contestants not receiving
+feedback for their release tested tasks, the rules regarding the allowed
+frequency of submissions and release testing may be changed. In such event
+students will be notified via the grading system and a live announcement.
+
+Submissions are graded whether or not they are release tested. If a contestant
+runs out of tokens, (s)he will not be able to obtain feedback, but can continue
+to submit and the last submission will count towards the final grading.
+
+Each input scenario in the grading system will have one of the following
+outcomes:
+
+\begin{enumerate}
+    \item Correct
+    \item Wrong answer
+    \item Run-time error (or out of memory)
+    \item Time limit exceeded
+\end{enumerate}
+
+The grading system will show the running time and memory used by the
+contestant’s solution. No information on the actual data or the output produced
+by the contestant‘s solution will be given to the contestant.
+
+The contestant may deduce from the feedback his or her provisional score for the
+task. However, there is a small chance that the score may change due to appeals,
+or indeterminacy of the contestant’s submission. Indeterminacy may arise
+intentionally due to the use of pseudo-random number generators, or
+unintentionally due to programming bugs or marginal running time. Moreover, in
+the event of technical failure or incorrect test data, all submissions may be
+re-graded during contest after the problem has been fixed, and this may change
+the score. If submissions are re-graded, contestants will be notified via the
+grading system and/or a live announcement.
+
+\section{Grading}
+
+Each subtask will be considered solved if every test in it is solved correctly
+and within time and memory limits. A submission will receive positive score only
+for subtasks that it solves.
+
+The score for each task will be the maximum of any released submissions and the
+last submission, whether the last submission is released or not. Submissions may
+be re-graded many times, and the final score will be that yielded by the final
+grading.
+
+Grading procedures can be overridden in the task description.
+
+\section{Ending the Competition}
+
+Contestants will be given a warning both 30 and 10 minutes before the end of the
+competition. After the end of the competition, contestants must immediately stop
+working and no further submissions are allowed.
+
+\section{Cheating}
+
+Any of the actions outlined below are considered illegal:
+
+\begin{enumerate}
+    \item Using any printed materials, except official BOI 2014 materials or any
+    electronic devices or data carriers, except official BOI 2014 equipment.
+    \item Bringing to competition room any electronic devices or data carriers.
+    \item Using a workstation or an account assigned to someone else.
+    \item Communicating in any form to other contestants or people other than
+    BOI 2014 staff.
+    \item Tampering with or compromising the grading system.
+    \item Attempting to store information in any part of the file system other
+    than the home directory for their account or the /tmp directory.
+    \item Attempting to access any machine on the network or the Internet, other
+    than the grading system.
+    \item Attempting to reboot or alter the boot sequence of any workstation.
+    \item Any other actions that is deemed by the Scientific Committee as
+    intentionally aimed at gaining unfair advantage over other contestants.
+\end{enumerate}
+
+Moreover, the following rules apply:
+
+\begin{enumerate}
+\item Submissions must not attempt to access any files on the file system.
+\item Submissions must be single-threaded and must not fork.
+\end{enumerate}
+
+Performing illegal actions or breaching any of the rules outlined above may be considered cheating and may result in disqualification.
+
+\section{Appeal Process}
+
+After each competition day every team leader will receive detailed results of
+his or her team’s contestants. There will be time allocated to check results on
+the grading system.
+
+In case of any disagreement with the results the team leader may submit written
+appeal in English. In case of incorrect tests, the incorrect tests are removed
+and the scores of all contestants are updated.
+
+Scientific Committee answers each appeal in the written form and gives a short
+report to team leaders about all appeals received after each contest day.
+
+\section{Medal Allocation}
+
+After competition all contestants are ranked in descending order with respect to
+their final scores. Medals are allocated according to the following algorithm.
+
+\begin{enumerate}
+    \item \emph{Score for gold medal} is greatest score where at least 1/12 of
+    contestants has final score equivalent or greater than this. All contestants
+    whose final score is at least score for gold medal will receive gold medal
+    and diploma.
+    \item \emph{Score for silver or gold medal} is greatest score where at least
+    1/4 of contestants has final score equivalent or greater than this. All
+    contestants whose final score is at least score for silver or gold medal and
+    who are not awarded by gold medal and diploma (as described above) will
+    receive silver medal and diploma.
+    \item \emph{Score for medal} is least score where at most 1/2 of contestants
+    has final score equivalent or greater than this. All contestants whose final
+    score is at least score for medal and who are not awarded by gold or silver
+    medal and diploma (as described above) will receive bronze medal and
+    diploma.
+\end{enumerate}
+
+Only official contestants are counted when calculating the medal boundaries.
+
+\end{document}
